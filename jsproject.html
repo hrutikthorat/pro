@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initialscale=1.0">
+<title>WOW CAFE</title>
+</head>
+<body>
+<div id="div1">
+<h1>Select Menu</h1>
+<input type="checkbox" id="c1"><h3 id="one">Tea 20RS</h3><br>
+<input type="checkbox" id="c2"><h3 id="two">Coffee 80RS</h3><br>
+<input type="checkbox" id="c3"><h3 id="three">Cold Drink 30</h3><br>
+<input type="button" id="b1" value="Place Order Here" onclick="f1()">
+</div>
+<div id="div2">
+</div>
+<div id="div3">
+<input type="button" value="Print Receipt" id="pbutton"onclick="
+    alert('Please collect your receipt');">
+</div>
+<script>
+function f1()
+{
+var v1,v2,v3,total=0;
+v1=document.getElementById("c1");
+v2=document.getElementById("c2");
+v3=document.getElementById("c3");
+if(v1.checked)
+{
+total=20;
+}
+if(v2.checked)
+{
+total=80;
+}
+if(v3.checked)
+{
+total=30;
+}
+if(v1.checked && v2.checked)
+{
+    total=100;
+}
+if(v2.checked && v3.checked)
+{
+    total=110;
+}
+if(v1.checked && v3.checked)
+{
+    total=50;
+}
+if(v1.checked && v2.checked && v3.checked)
+{
+    total=130;
+}
+
+document.getElementById("div2").innerHTML="Bill Date:"+new
+Date().toLocaleDateString()+"<br>Total Bill:"+total+"<br>Thank You Visit Again!!!!";
+}
+</script>
+</body>
+<style>
+h1{
+background-color: yellow;
+color:black;
+text-align: center;
+margin-left:-20px;
+margin-top:-20px;
+width:370px;
+}
+body{
+background-image:url("coffee.jpg");
+background-repeat: no-repeat;
+background-size:100%,100%;
+}
+#div1{
+color:orangered;
+font-weight: bold;
+width:330px;
+height:200px;
+line-height: 40px;
+border-style:solid;
+padding:20px;
+}
+#div2
+{
+width:300px;
+height:100px;
+font-weight: bold;
+background-color: blueviolet;
+position:absolute;
+top:20px;
+left:400px;
+
+color:black;
+padding:20px;
+line-height: 30px;
+}
+#one,input{
+display:inline;
+}
+#two,input{
+display:inline;
+}
+#three,input{
+display:inline;
+}
+#b1
+{
+width:200px;
+height:30px;
+background-color: red;
+border-radius:10px;
+font-size: 20px;
+font-weight: bold;
+color:white;
+margin-top:20px;
+}
+#b1:hover{
+background-color: green;
+cursor:pointer;
+}
+#div3
+{
+position:absolute;
+left:450px;
+top:160px;
+}
+#pbutton
+{
+margin-top:30px;
+background:linear-gradient(45deg,red,green);
+font-weight: bold;
+
+height:40px;
+cursor:pointer;
+border-radius: 30px;
+width:200px;
+color:white;
+} 
+</style>
+</html>
+
+
+
+
+
+
+
+
